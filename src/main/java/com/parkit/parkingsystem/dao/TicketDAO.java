@@ -51,7 +51,7 @@ public class TicketDAO {
             ResultSet rs = ps.executeQuery();
             if(rs.next()){
                 ticket = new Ticket();
-                ParkingSpot parkingSpot = new ParkingSpot(rs.getInt(1), ParkingType.valueOf(rs.getString(6)),false);
+                ParkingSpot parkingSpot = new ParkingSpot(rs.getInt(1), ParkingType.valueOf(rs.getString(6)),rs.getBoolean(7));
                 ticket.setParkingSpot(parkingSpot);
                 ticket.setId(rs.getInt(2));
                 ticket.setVehicleRegNumber(vehicleRegNumber);
@@ -86,4 +86,24 @@ public class TicketDAO {
         }
         return false;
     }
+
+
+public boolean isReccurentVehicle(String vRegNumber) {
+    Connection con = null;
+    boolean isRecurrent = false;
+    try {
+        con = dataBaseConfig.getConnection();
+        PreparedStatement ps = con.prepareStatement(DBConstants.RECURRENT_VEHICLE);
+        ps.setString(1,vRegNumber);
+        ResultSet rs = ps.executeQuery();
+        isRecurrent = rs.getInt("VRN")>1;
+        dataBaseConfig.closeResultSet(rs);
+        dataBaseConfig.closePreparedStatement(ps);
+    }catch (Exception ex){
+        logger.error("Error fetching next available slot",ex);
+    }finally {
+        dataBaseConfig.closeConnection(con);
+        return isRecurrent;
+    }
+}
 }
