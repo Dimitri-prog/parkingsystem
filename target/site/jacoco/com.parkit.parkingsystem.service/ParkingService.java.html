@@ -31,7 +31,7 @@ public class ParkingService {
         try{
 <span class="nc" id="L32">            ParkingSpot parkingSpot = getNextParkingNumberIfAvailable();</span>
 <span class="nc bnc" id="L33" title="All 4 branches missed.">            if(parkingSpot !=null &amp;&amp; parkingSpot.getId() &gt; 0){</span>
-<span class="nc" id="L34">                String vehicleRegNumber = getVehichleRegNumber();</span>
+<span class="nc" id="L34">                String vehicleRegNumber = getVehichleRegNumber(); </span>
 <span class="nc" id="L35">                parkingSpot.setAvailable(false);</span>
 <span class="nc" id="L36">                parkingSpotDAO.updateParking(parkingSpot);//allot this parking space and mark it's availability as false</span>
 
@@ -60,7 +60,7 @@ public class ParkingService {
     }
 
     public ParkingSpot getNextParkingNumberIfAvailable(){
-<span class="nc" id="L63">        int parkingNumber=0;</span>
+<span class="nc" id="L63">        int parkingNumber=0;               </span>
 <span class="nc" id="L64">        ParkingSpot parkingSpot = null;</span>
         try{
 <span class="nc" id="L66">            ParkingType parkingType = getVehichleType();</span>

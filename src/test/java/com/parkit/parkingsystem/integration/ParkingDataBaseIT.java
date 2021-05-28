@@ -38,7 +38,7 @@ public class ParkingDataBaseIT {
     private static TicketDAO ticketDAO;
     private static DataBasePrepareService dataBasePrepareService;
 
-    @Mock
+    @Mock 
     private static InputReaderUtil inputReaderUtil;
 
     @BeforeAll
@@ -58,7 +58,7 @@ public class ParkingDataBaseIT {
     }
 
     @AfterAll
-    private static void tearDown(){
+    private static void tearDown(){ 
 
     }
 
@@ -75,7 +75,7 @@ public class ParkingDataBaseIT {
         verify(inputReaderUtil, Mockito.times(1)).readSelection();
         verify(inputReaderUtil, Mockito.times(1)).readVehicleRegistrationNumber();
     }
-
+ 
     @Test
     public void testParkingLotExit() throws Exception{
         ParkingService parkingService = new ParkingService(inputReaderUtil, parkingSpotDAO, ticketDAO);
@@ -86,7 +86,7 @@ public class ParkingDataBaseIT {
         Date date = new Date(System.currentTimeMillis());
         Ticket ticket = new Ticket();
         
-         ticket.setInTime(new Date(System.currentTimeMillis() - (60*60*1000)));
+        ticket.setInTime(new Date(System.currentTimeMillis() - (60*60*1000)));
         ticket.setOutTime(date);
         ticket.setVehicleRegNumber(VEHICLE_REG_NUMBER); 
         ticketDAO.saveTicket(ticket);
@@ -102,7 +102,7 @@ public class ParkingDataBaseIT {
        
          //verify(inputReaderUtil, Mockito.times(1)).readVehicleRegistrationNumber();
 		//TODO: check that the fare generated and out time are populated correctly in the database
-     
+      
         
     }
 

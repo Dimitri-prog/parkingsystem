@@ -1,84 +1,33 @@
-#############################
-## Java
-#############################
-.mtj.tmp /
-*.classer
-*.pot
-*.guerre
-*.oreille
-* .nar
-hs_err_pid *
+HELP.md
+target/
+!.mvn/wrapper/maven-wrapper.jar
+!**/src/main/**/target/
+!**/src/test/**/target/
 
-#############################
-## Maven
-#############################
-cible/
-pom.xml.tag
-pom.xml.releaseBackup
-pom.xml.versionsBackup
-pom.xml.next
-pom.xml.bak
-release.properties
-dépendance-réduite-pom.xml
-buildNumber.properties
-.mvn / timing.properties
-.mvn / wrapper / maven-wrapper.jar
-
-#############################
-## Gradle
-#############################
-poubelle/
-construire/
-.gradle
-.gradletasknamecache
-gradle-app.setting
-! gradle-wrapper.jar
-
-#############################
-## IntelliJ
-#############################
-en dehors/
-.idée/
-.idea_modules /
-* .iml
-* .ipr
-* .iws
-
-#############################
-## Éclipse
-#############################
-.Les paramètres/
-poubelle/
-tmp /
-.metadata
+### STS ###
+.apt_generated
 .classpath
-.projet
-* .tmp
-* .bak
-* .swp
-* ~ .nib
-local.properties
-.loadpath
 .factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
 
-#############################
-## NetBeans
-#############################
-nbproject / privé /
-construire/
-nbbuild /
-dist /
-nbdist /
-nbactions.xml
-nb-configuration.xml
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
 
-#############################
-## Code Visual Studio
-#############################
-.vscode /
-.code-espace de travail
+### NetBeans ###
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+build/
+!**/src/main/**/build/
+!**/src/test/**/build/
 
-#############################
-## OS X
-#############################
-.DS_Store
+### VS Code ###
+.vscode/

@@ -17,7 +17,7 @@ import org.apache.logging.log4j.Logger;
 <span class="nc" id="L17">        boolean continueApp = true;</span>
 <span class="nc" id="L18">        InputReaderUtil inputReaderUtil = new InputReaderUtil();</span>
 <span class="nc" id="L19">        ParkingSpotDAO parkingSpotDAO = new ParkingSpotDAO();</span>
-<span class="nc" id="L20">        TicketDAO ticketDAO = new TicketDAO();</span>
+<span class="nc" id="L20">        TicketDAO ticketDAO = new TicketDAO(); </span>
 <span class="nc" id="L21">        ParkingService parkingService = new ParkingService(inputReaderUtil, parkingSpotDAO, ticketDAO);</span>
 
 <span class="nc bnc" id="L23" title="All 2 branches missed.">        while(continueApp){</span>
