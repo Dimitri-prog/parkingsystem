@@ -2,9 +2,7 @@ HELP.md
 
 
 
-*/target/*
-**/META-INF/
-!.mvn/wrapper/maven-wrapper.jar
+target / * / target / .metadata tar.gz .classpath .project * /. settings /
 
 ### STS ###
 .apt_generated
