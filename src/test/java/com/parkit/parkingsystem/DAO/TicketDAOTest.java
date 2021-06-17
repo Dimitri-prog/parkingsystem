@@ -59,7 +59,7 @@ public class TicketDAOTest {
 	
 	@Test
 	public void getTicketTest() {
-		 ParkingSpot parkingSpot = new ParkingSpot(1, ParkingType.CAR,false);
+		 ParkingSpot parkingSpot = new ParkingSpot(1, ParkingType.CAR,false); 
          Ticket ticket = new Ticket();
          ticket.setInTime(new Date(System.currentTimeMillis() - (60*60*1000)));
          ticket.setParkingSpot(parkingSpot);
@@ -67,7 +67,7 @@ public class TicketDAOTest {
          ticketDAO.saveTicket(ticket);
     
     Ticket tickets = ticketDAO.getTicket(VEHICLE_REG_NUMBER);
-
+ 
 	assertEquals(tickets.getVehicleRegNumber(),VEHICLE_REG_NUMBER);
 	assertEquals(tickets.getParkingSpot(),parkingSpot);
 	}
@@ -77,19 +77,42 @@ public class TicketDAOTest {
 		
 		
 		Ticket ticket = new Ticket();
-         Date outTime = new Date(System.currentTimeMillis());
-         ticket.setPrice(3);
-         ticket.setOutTime(outTime);
-         
+        Date outTime = new Date(System.currentTimeMillis());
+        ticket.setPrice(3);
+        ticket.setOutTime(outTime);
         boolean ticket2 = ticketDAO.updateTicket(ticket);
         
+        assertEquals(ticket2, true);
        
-        
-         assertEquals(ticket2, true);
+    }    
          
-        
-	}
-
+         
+      
+	@Test
+	public void  isReccurentVehicleTest () {
+		 ParkingSpot parkingSpot = new ParkingSpot(1, ParkingType.CAR,false);
+	     Ticket ticket = new Ticket();
+		 ticket.setParkingSpot(parkingSpot);
+		 ticket.setVehicleRegNumber(VEHICLE_REG_NUMBER);
+         ticket.setInTime(new Date(System.currentTimeMillis() - (60*60*1000)));
+         ticketDAO.saveTicket(ticket);
+         boolean bool = ticketDAO.isReccurentVehicle(VEHICLE_REG_NUMBER);
+         
+         assertEquals(bool , false);
+		
+         
+     
+	}  
+	
+	
+}	
+	 
 	
 
-}
+
+
+
+
+
+
+

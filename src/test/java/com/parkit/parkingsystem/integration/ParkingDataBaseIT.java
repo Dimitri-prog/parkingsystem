@@ -39,7 +39,7 @@ public class ParkingDataBaseIT {
     private static DataBasePrepareService dataBasePrepareService;
 
     @Mock 
-    private static InputReaderUtil inputReaderUtil;
+    private static InputReaderUtil inputReaderUtil; 
 
     @BeforeAll
     private static void setUp() throws Exception{
@@ -58,7 +58,7 @@ public class ParkingDataBaseIT {
     }
 
     @AfterAll
-    private static void tearDown(){ 
+    private static void tearDown(){   
 
     }
 

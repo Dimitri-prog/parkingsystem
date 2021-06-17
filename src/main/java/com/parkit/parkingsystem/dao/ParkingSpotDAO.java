@@ -14,7 +14,7 @@ import java.sql.ResultSet;
 public class ParkingSpotDAO {
     private static final Logger logger = LogManager.getLogger("ParkingSpotDAO");
 
-    public DataBaseConfig dataBaseConfig = new DataBaseConfig();
+    public DataBaseConfig dataBaseConfig = new DataBaseConfig(); 
 
     public int getNextAvailableSlot(ParkingType parkingType){
         Connection con = null;
@@ -34,7 +34,7 @@ public class ParkingSpotDAO {
         }finally {
             dataBaseConfig.closeConnection(con);
         }
-        return result;
+        return result; 
     }
 
     public boolean updateParking(ParkingSpot parkingSpot){

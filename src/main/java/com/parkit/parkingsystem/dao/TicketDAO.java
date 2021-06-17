@@ -15,9 +15,9 @@ import java.sql.Timestamp;
 
 public class TicketDAO {
 
-    private static final Logger logger = LogManager.getLogger("TicketDAO");
+    private static final Logger logger = LogManager.getLogger("TicketDAO"); 
 
-    public DataBaseConfig dataBaseConfig = new DataBaseConfig(); 
+    public DataBaseConfig dataBaseConfig = new DataBaseConfig();  
 
     public boolean saveTicket(Ticket ticket){
         Connection con = null;
@@ -37,7 +37,7 @@ public class TicketDAO {
         }finally {
             dataBaseConfig.closeConnection(con);
             return false;
-        }
+        } 
     }
 
     public Ticket getTicket(String vehicleRegNumber) {
@@ -96,7 +96,9 @@ public boolean isReccurentVehicle(String vRegNumber) {
         PreparedStatement ps = con.prepareStatement(DBConstants.RECURRENT_VEHICLE);
         ps.setString(1,vRegNumber);
         ResultSet rs = ps.executeQuery();
+        if(rs.next()){
         isRecurrent = rs.getInt("VRN")>1;
+        }
         dataBaseConfig.closeResultSet(rs);
         dataBaseConfig.closePreparedStatement(ps);
     }catch (Exception ex){

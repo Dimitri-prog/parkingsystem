@@ -37,14 +37,14 @@ public class ParkingSpotDAOTest {
      parkingType = parkingType.CAR;
 	 dataBasePrepareService = new DataBasePrepareService();
 	 parkingSpotDAO = new ParkingSpotDAO();
-     parkingSpotDAO.dataBaseConfig = dataBaseTestConfig;
+     parkingSpotDAO.dataBaseConfig = dataBaseTestConfig; 
      
 	 }
  
     @BeforeEach
 	private void setUpPerTest() throws Exception {
 	
-	dataBasePrepareService.clearDataBaseEntries();
+	dataBasePrepareService.clearDataBaseEntries(); 
 	}
     
     @Test
@@ -55,27 +55,25 @@ public class ParkingSpotDAOTest {
     assertEquals(parkingNumber,1);
     }
     
-   /* @Test
-    public void updateParkingTest (ParkingSpot parkingSpot){
+    @Test
+    public void updateParkingTest (){
     	
     	
-    	 ParkingSpot parkingSpot1 = new ParkingSpot(3, ParkingType.CAR,false);
-         Ticket ticket = new Ticket();
-         ticket.setInTime(new Date(System.currentTimeMillis() - (60*60*1000)));
-         ticket.setParkingSpot(parkingSpot1);
-         ticket.setVehicleRegNumber("abcd");
-         ticketDAO.saveTicket(ticket);
+    	 ParkingSpot parkingSpot1 = new ParkingSpot(3, ParkingType.CAR,true);
+         parkingSpot1.setAvailable(false);
+         boolean park = parkingSpotDAO.updateParking(parkingSpot1);
          
-         Ticket tickets = ticketDAO.getTicket("abcd");
+          assertEquals(false, parkingSpot1.isAvailable());
+          assertEquals(true , park);
+
+    }
         
-         ParkingSpot parkingSpot11 = tickets.getParkingSpot();
-         parkingSpot11.setAvailable(true);
-         boolean parking = parkingSpotDAO.updateParking(parkingSpot11);
+       
         
-         assertEquals(true , parkingSpot11);
+      
          
     
-}
-   */
+
+   
    
   }	
