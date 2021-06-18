@@ -1,10 +1,7 @@
 HELP.md
 
 
-
-*/target/*
-**/META-INF/
-!.mvn/wrapper/maven-wrapper.jar
+*/cible/**
 
 ### STS ###
 .apt_generated
