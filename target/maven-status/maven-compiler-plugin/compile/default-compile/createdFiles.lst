@@ -1,5 +1,6 @@
 com\parkit\parkingsystem\service\FareCalculatorService$1.class
 com\parkit\parkingsystem\service\ParkingService.class
+com\parkit\parkingsystem\config\ConfigProperties.class
 com\parkit\parkingsystem\model\ParkingSpot.class
 com\parkit\parkingsystem\App.class
 com\parkit\parkingsystem\dao\ParkingSpotDAO.class
