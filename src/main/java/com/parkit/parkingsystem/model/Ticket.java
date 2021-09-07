@@ -1,63 +1,69 @@
 package com.parkit.parkingsystem.model;
 
-
 import java.util.Date;
 
+
+
+/**
+ * Cette classe permet de créer un ticket et d'accéder à ses informations.
+ */ 
 public class Ticket {
-    private int id;
-    private ParkingSpot parkingSpot;
-    private String vehicleRegNumber;
-    private double price;
-    private Date inTime;
-    private Date outTime;
-    
-    
-    public int getId() {    
-        return id;
-    }
-    
-    
-    public void setId(int id) {
-        this.id = id;
-    }
+	private int id;
+	private ParkingSpot parkingSpot;
+	private String vehicleRegNumber;
+	private double price;
+	private Date inTime;
+	private Date outTime;
+	
+	
 
-    public ParkingSpot getParkingSpot() {
-        return parkingSpot;
-    }
+	public int getId() {
+		return id;
+	}
 
-    public void setParkingSpot(ParkingSpot parkingSpot) {
-        this.parkingSpot = parkingSpot;
-    }
+	public void setId(int id) {
+		this.id = id;
+	}
 
-    public String getVehicleRegNumber() {
-        return vehicleRegNumber;
-    }
+	public ParkingSpot getParkingSpot() {
+		return parkingSpot;
+	}
 
-    public void setVehicleRegNumber(String vehicleRegNumber) {
-        this.vehicleRegNumber = vehicleRegNumber;
-    }
+	public void setParkingSpot(ParkingSpot parkingSpot) {
+		this.parkingSpot = parkingSpot;
+	}
 
-    public double getPrice() {
-        return price;
-    }
+	public String getVehicleRegNumber() {
+		return vehicleRegNumber;
+	}
 
-    public void setPrice(double price) {
-        this.price = price;
-    }
+	public void setVehicleRegNumber(String vehicleRegNumber) {
+		this.vehicleRegNumber = vehicleRegNumber;
+	}
 
-    public Date getInTime() {
-        return inTime;
-    }
+	public double getPrice() {
+		return price;
+	}
 
-    public void setInTime(Date inTime) {
-        this.inTime = inTime;
-    }
+	public void setPrice(double price) {
+		this.price = price;
+	}
 
-    public Date getOutTime() {
-        return outTime;
-    }
+	public Date getInTime() {
+		return this.inTime = inTime != null ? new Date(inTime.getTime()): null;
 
-    public void setOutTime(Date outTime) {
-        this.outTime = outTime;
-    }
-}
+	}
+
+	public void setInTime(Date inTime) {
+		this.inTime = inTime != null ? new Date(inTime.getTime()): null;
+
+	}
+
+	public Date getOutTime() {
+		return  this.outTime = outTime != null ? new Date(outTime.getTime()) :null;
+	}
+
+	public void setOutTime(Date outTime) {
+		this.outTime = outTime != null ? new Date(outTime.getTime()) :null;
+	}
+} 
